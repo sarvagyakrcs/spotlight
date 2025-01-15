@@ -1,0 +1,109 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import architectureDiagram from './cloud-diagram.png'
+
+export const article = {
+  author: 'Sarvagya Kumar',
+  date: '2024-11-10',
+  title: 'Cloud Architecture Deep Dive: Virtual Companion Chatbot',
+  description:
+    'A comprehensive exploration of the cloud infrastructure powering our virtual companion chatbot, featuring AWS services, serverless architecture, and edge computing solutions.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Our virtual companion chatbot leverages a sophisticated cloud architecture that combines various AWS services to deliver a scalable, reliable, and efficient solution. This article deep dives into the technical infrastructure that powers our emotional intelligence system.
+
+<Image src={architectureDiagram || "/placeholder.svg"} alt="Cloud Architecture Diagram showing the complete system design" />
+
+# Building a Cloud-Powered Virtual Companion: A Deep Dive into Emotionally Intelligent Chatbots"?
+
+## Abstract
+
+This research introduces a novel virtual companion chatbot designed to provide emotional support and foster social interaction. The chatbot employs a dual-stage process to predict user emotions:
+
+1. Analyzes textual input to assess emotional state
+2. Analyzes audio files to capture vocal cues
+
+These outputs are combined into a cohesive emotional profile, which is then processed by a Large Language Model (LLM) within a predefined template. This ensures the chatbot's responses are emotionally aware, supportive, and non-harmful.
+
+## Implementation Methodology
+
+The system architecture involves several key components:
+
+- **Real-time audio analysis and response production**
+- **Amazon EC2 instances** for hosting Node.js and FastAPI applications
+- **Amazon S3 buckets** for storing uploaded audio files and intermediate processing results
+- Integration with external **LLM APIs** (e.g., OpenAI's GPT or Anthropic's Claude) for final response generation
+
+### Current Implementation
+
+- Uses Amazon EC2 instances for hosting applications
+- Implements auto-scaling groups across multiple availability zones
+- Utilizes Amazon S3 for data storage
+- Integrates with external LLM APIs
+- Uses Application Load Balancer (ALB) for traffic distribution
+- Configures VPCs and security groups for network management
+
+### Future Optimizations
+
+- Transition to serverless and edge computing technologies
+- Replace EC2 instances with AWS Lambda functions
+- Implement API Gateway for request management
+- Utilize AWS Fargate for serverless container orchestration
+- Leverage AWS CloudFront with Lambda@Edge for edge computing
+- Implement additional AWS services:
+  - Amazon Comprehend for sentiment analysis
+  - AWS Step Functions for workflow orchestration
+  - DynamoDB for data storage
+  - ElastiCache for distributed caching
+- Use AWS X-Ray for distributed tracing
+- Implement CloudWatch for logging and alerts
+- Utilize AWS Budgets and Cost Explorer for cost management
+
+## Sentiment Classification on Audio Files
+
+The system uses the following features for audio sentiment classification:
+
+- 39 MFCC (Mel-frequency Cepstral Coefficients)
+- Zero Crossing Rate (ZCR)
+- Teager Energy Operator (TEO)
+- Harmonic to Noise Ratio (HNR)
+
+### Model Architecture
+
+The sentiment classification model uses a divide-and-conquer approach with four binary Support Vector Machine (SVM) classifiers:
+
+1. Angry vs. Sad (94.49% accuracy)
+2. Angry vs. Happy (72% accuracy)
+3. Fear vs. Sad (71.05% accuracy)
+4. Happy vs. Sad (86.93% accuracy)
+
+The overall architecture achieves approximately 60% accuracy on the entire dataset.
+
+## Sentiment Analysis of Text Using BERT
+
+The text sentiment analysis component uses BERT (Bidirectional Encoder Representations from Transformers) and involves the following steps:
+
+1. Dataset preparation and tokenization
+2. Model initialization (BertForSequenceClassification)
+3. Training loop with AdamW optimizer
+4. Evaluation using metrics like accuracy and F1-score
+
+## Integration and Response Generation
+
+The final stage integrates predictions from both text and audio sentiment analysis models. The identified sentiments are structured into a prompt template, which serves as input for the Large Language Model (LLM) to generate the final response.
+
+## Conclusion and Future Work
+
+The project demonstrates the potential of multi-modal sentiment analysis in creating emotionally intelligent chatbots. Future work will focus on:
+
+1. Enhancing the accuracy of the audio sentiment analysis model
+2. Expanding and curating a more representative dataset
+3. Fine-tuning the Large Language Model for more precise and contextually appropriate responses
+
+This approach paves the way for more empathetic and human-like digital companions in the future.
