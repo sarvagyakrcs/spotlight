@@ -74,7 +74,7 @@ export default function Uses() {
           </Tool>
         </ToolsSection>
         <ToolsSection title="Development tools">
-          <Tool title="Cisual Studio Code">
+          <Tool title="Visual Studio Code">
             VS Code has been an invaluable tool in my development journey. Its intuitive interface, extensive extensions, and seamless integration with languages like JavaScript and TypeScript have significantly boosted my productivity, making coding faster and more efficient. It&apos;s my go-to IDE for both small projects and large-scale applications.
           </Tool>
           <Tool title="Warp">
