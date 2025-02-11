@@ -9,7 +9,7 @@ import logoPlanetaria from '@/images/logos/planetaria.svg'
 
 const projects = [
   {
-    name: 's0.dev,
+    name: 's0.dev',
     description:
       'Introducing S0, an innovative system that combines vector search and generative AI to bridge the gap between design inspiration and implementation, enabling rapid UI development through intelligent component search and generation.',
     link: { href: 'https://github.com/sarvagyakrcs/s0.dev', label: 's0.dev' },
