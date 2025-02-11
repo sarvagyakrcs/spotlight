@@ -9,6 +9,13 @@ import logoPlanetaria from '@/images/logos/planetaria.svg'
 
 const projects = [
   {
+    name: 's0.dev,
+    description:
+      'Introducing S0, an innovative system that combines vector search and generative AI to bridge the gap between design inspiration and implementation, enabling rapid UI development through intelligent component search and generation.',
+    link: { href: 'https://github.com/sarvagyakrcs/s0.dev', label: 's0.dev' },
+    logo: logoAnimaginary,
+  },
+  {
     name: 'GYC- Git Your Code',
     description:
       'Git Your Code implements a cutting-edge Retrieval-Augmented Generation (RAG) architecture designed for deep semantic analysis of GitHub repositories. The system leverages vector embeddings, natural language processing, and machine learning to provide intelligent code comprehension and query capabilities.',
