@@ -33,7 +33,8 @@
     "remark-gfm": "^4.0.0",
     "tailwindcss": "^3.4.1",
     "tailwindui-template": ".",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "@vercel/analytics": "^1.5.0",
   },
   "devDependencies": {
     "eslint": "^8.56.0",
