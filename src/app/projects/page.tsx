@@ -23,6 +23,13 @@ const projects = [
     logo: logoHelioStream,
   },
   {
+    name: 'Kuro',
+    description:
+      'Kuro is a web application that allows users to create udemy like courses for free using ai and youtube videos.',
+    link: { href: 'https://github.com/sarvagyakrcs/kuro', label: 'github.com' },
+    logo: logoAnimaginary,
+  },
+  {
     name: 'Apshabd',
     description:
       'The Profanity Detection API is a web service designed to detect and flag profane language in text messages, this project leverages vector search technologies to accurately identify offensive language.',
