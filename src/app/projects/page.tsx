@@ -9,6 +9,20 @@ import logoPlanetaria from '@/images/logos/planetaria.svg'
 
 const projects = [
   {
+    name: 'Toolplane',
+    description:
+      'Toolplane is a Swiss Army knife for developers—offering blazing-fast, no-signup web scrapers and utilities like Reddit, Amazon, Bing scrapers, Markdown converters, and QR/password generators. Built to save time and avoid the hassle of bot-fighting.',
+    link: { href: 'https://toolplane.xyz', label: 'toolplane.xyz' },
+    logo: logoHelioStream,
+  },
+  {
+    name: 'web-to-md',
+    description:
+      'web-to-md turns any webpage into clean, readable Markdown instantly. With built-in analytics and open-source spirit, it’s a must-have for content preservation, blogging, and fast documentation.',
+    link: { href: 'https://web2md.site', label: 'web2md.site' },
+    logo: logoPlanetaria,
+  },
+  {
     name: 's0.dev',
     description:
       'Introducing S0, an innovative system that combines vector search and generative AI to bridge the gap between design inspiration and implementation, enabling rapid UI development through intelligent component search and generation.',
@@ -16,7 +30,7 @@ const projects = [
     logo: logoAnimaginary,
   },
   {
-    name: 'GYC- Git Your Code',
+    name: 'GYC - Git Your Code',
     description:
       'Git Your Code implements a cutting-edge Retrieval-Augmented Generation (RAG) architecture designed for deep semantic analysis of GitHub repositories. The system leverages vector embeddings, natural language processing, and machine learning to provide intelligent code comprehension and query capabilities.',
     link: { href: 'https://github.com/sarvagyakrcs/git-your-code', label: 'GYC-SaaS' },
@@ -25,14 +39,14 @@ const projects = [
   {
     name: 'Kuro',
     description:
-      'Kuro is a web application that allows users to create udemy like courses for free using ai and youtube videos.',
+      'Kuro is a web application that allows users to create Udemy-like courses for free using AI and YouTube videos.',
     link: { href: 'https://github.com/sarvagyakrcs/kuro', label: 'github.com' },
     logo: logoAnimaginary,
   },
   {
     name: 'Apshabd',
     description:
-      'The Profanity Detection API is a web service designed to detect and flag profane language in text messages, this project leverages vector search technologies to accurately identify offensive language.',
+      'The Profanity Detection API is a web service designed to detect and flag profane language in text messages. This project leverages vector search technologies to accurately identify offensive language.',
     link: { href: 'https://github.com/sarvagyakrcs/apshabd.io', label: 'apshabd.io' },
     logo: logoPlanetaria,
   },
@@ -51,6 +65,7 @@ const projects = [
     logo: logoHelioStream,
   },
 ]
+
 
 function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
