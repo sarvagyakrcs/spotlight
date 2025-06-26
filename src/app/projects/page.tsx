@@ -13,59 +13,58 @@ const projects = [
     description:
       'Toolplane is a Swiss Army knife for developers—offering blazing-fast, no-signup web scrapers and utilities like Reddit, Amazon, Bing scrapers, Markdown converters, and QR/password generators. Built to save time and avoid the hassle of bot-fighting.',
     link: { href: 'https://toolplane.xyz', label: 'toolplane.xyz' },
-    logo: logoHelioStream,
+    category: 'Web Tools',
   },
   {
     name: 'web-to-md',
     description:
-      'web-to-md turns any webpage into clean, readable Markdown instantly. With built-in analytics and open-source spirit, it’s a must-have for content preservation, blogging, and fast documentation.',
+      'web-to-md turns any webpage into clean, readable Markdown instantly. With built-in analytics and open-source spirit, it&apos;s a must-have for content preservation, blogging, and fast documentation.',
     link: { href: 'https://web2md.site', label: 'web2md.site' },
-    logo: logoPlanetaria,
+    category: 'Conversion Tools',
   },
   {
     name: 's0.dev',
     description:
       'Introducing S0, an innovative system that combines vector search and generative AI to bridge the gap between design inspiration and implementation, enabling rapid UI development through intelligent component search and generation.',
     link: { href: 'https://github.com/sarvagyakrcs/s0.dev', label: 's0.dev' },
-    logo: logoAnimaginary,
+    category: 'AI Tools',
   },
   {
     name: 'GYC - Git Your Code',
     description:
       'Git Your Code implements a cutting-edge Retrieval-Augmented Generation (RAG) architecture designed for deep semantic analysis of GitHub repositories. The system leverages vector embeddings, natural language processing, and machine learning to provide intelligent code comprehension and query capabilities.',
     link: { href: 'https://github.com/sarvagyakrcs/git-your-code', label: 'GYC-SaaS' },
-    logo: logoHelioStream,
+    category: 'Developer Tools',
   },
   {
     name: 'Kuro',
     description:
       'Kuro is a web application that allows users to create Udemy-like courses for free using AI and YouTube videos.',
     link: { href: 'https://github.com/sarvagyakrcs/kuro', label: 'github.com' },
-    logo: logoAnimaginary,
+    category: 'Education',
   },
   {
     name: 'Apshabd',
     description:
       'The Profanity Detection API is a web service designed to detect and flag profane language in text messages. This project leverages vector search technologies to accurately identify offensive language.',
     link: { href: 'https://github.com/sarvagyakrcs/apshabd.io', label: 'apshabd.io' },
-    logo: logoPlanetaria,
+    category: 'API Services',
   },
   {
     name: 'IEEE: Virtual Companion Chatbot',
     description:
       'This research introduces a novel virtual companion chatbot designed to provide emotional support and foster social interaction.',
     link: { href: 'https://ieeexplore.ieee.org/document/10816756', label: 'IEEE' },
-    logo: logoAnimaginary,
+    category: 'Research',
   },
   {
     name: 'Youdemy',
     description:
       'YouDemy turns lengthy YouTube courses into organized, Udemy-style learning experiences with AI-powered module breakdowns and progress tracking.',
     link: { href: 'https://github.com/sarvagyakrcs/youdemy', label: 'github.com' },
-    logo: logoHelioStream,
+    category: 'Education',
   },
 ]
-
 
 function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -78,42 +77,37 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
+function Project({ project }: { project: { name: string; description: string; link: { href: string; label: string }; category: string } }) {
+  return (
+    <Card as="article">
+      <Card.Title href={project.link.href}>
+        {project.name}
+      </Card.Title>
+      <Card.Eyebrow decorate>
+        {project.category}
+      </Card.Eyebrow>
+      <Card.Description>{project.description}</Card.Description>
+      <Card.Cta>View project</Card.Cta>
+    </Card>
+  )
+}
+
 export const metadata: Metadata = {
   title: 'Projects',
-  description: 'Things I’ve made trying to put my dent in the universe.',
+  description: 'Things I&apos;ve made trying to put my dent in the universe.',
 }
 
 export default function Projects() {
   return (
     <SimpleLayout
-      title="Things I’ve made trying to put my dent in the universe."
-      intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+      title="Things I&apos;ve made trying to put my dent in the universe."
+      intro="I&apos;ve worked on tons of little projects over the years but these are the ones that I&apos;m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
     >
-      <ul
-        role="list"
-        className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
-      >
+      <div className="flex flex-col gap-16">
         {projects.map((project) => (
-          <Card as="li" key={project.name}>
-            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image
-                src={project.logo}
-                alt=""
-                className="h-8 w-8"
-                unoptimized
-              />
-            </div>
-            <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              <Card.Link href={project.link.href}>{project.name}</Card.Link>
-            </h2>
-            <Card.Description>{project.description}</Card.Description>
-            <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-              <LinkIcon className="h-6 w-6 flex-none" />
-              <span className="ml-2">{project.link.label}</span>
-            </p>
-          </Card>
+          <Project key={project.name} project={project} />
         ))}
-      </ul>
+      </div>
     </SimpleLayout>
   )
 }
