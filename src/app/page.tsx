@@ -82,7 +82,7 @@ function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 function Article({ article }: { article: ArticleWithSlug }) {
   return (
-    <Card as="article">
+    <Card className='text-justify' as="article">
       <Card.Title href={`/articles/${article.slug}`}>
         {article.title}
       </Card.Title>
@@ -112,9 +112,9 @@ function Newsletter() {
   return (
     <form
       action="/thank-you"
-      className="border border-slate-200 p-6 dark:border-slate-700/40"
+      className="border border-slate-300 p-6 dark:border-slate-700/50 bg-neutral-50/50 dark:bg-slate-900/30"
     >
-      <h2 className="flex text-sm font-semibold text-slate-900 dark:text-slate-100 font-display uppercase tracking-wider">
+      <h2 className="flex text-sm font-bold text-slate-900 dark:text-slate-100 font-display uppercase tracking-wider">
         <MailIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Stay up to date</span>
       </h2>
@@ -156,12 +156,12 @@ function Role({ role }: { role: Role }) {
 
   return (
     <li className="flex gap-4">
-      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center shadow-md shadow-slate-800/5 ring-1 ring-slate-900/5 dark:border dark:border-slate-700/50 dark:bg-neutral-800 dark:ring-0">
+      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center shadow-md shadow-slate-800/10 ring-1 ring-slate-900/10 dark:border dark:border-slate-700/60 dark:bg-neutral-800 dark:ring-0">
         <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>
-        <dd className="w-full flex-none text-sm font-medium text-slate-900 dark:text-slate-100 font-display">
+        <dd className="w-full flex-none text-sm font-bold text-slate-900 dark:text-slate-100 font-display">
           {role.company}
         </dd>
         <dt className="sr-only">Role</dt>
@@ -211,8 +211,8 @@ function Resume() {
   ]
 
   return (
-    <div className="border border-slate-200 p-6 dark:border-slate-700/40">
-      <h2 className="flex text-sm font-semibold text-slate-900 dark:text-slate-100 font-display uppercase tracking-wider">
+    <div className="border border-slate-300 p-6 dark:border-slate-700/50 bg-neutral-50/50 dark:bg-slate-900/30">
+      <h2 className="flex text-sm font-bold text-slate-900 dark:text-slate-100 font-display uppercase tracking-wider">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Work</span>
       </h2>
@@ -239,7 +239,7 @@ function Photos() {
           <div
             key={image.src}
             className={clsx(
-              'relative aspect-[9/10] w-44 flex-none overflow-hidden bg-slate-100 sm:w-72 dark:bg-neutral-800',
+              'relative aspect-[9/10] w-44 flex-none overflow-hidden bg-slate-200 sm:w-72 dark:bg-neutral-800',
               rotations[imageIndex % rotations.length],
             )}
           >
@@ -257,7 +257,7 @@ function Photos() {
 }
 
 export default async function Home() {
-  let articles = (await getAllArticles()).slice(0, 4)
+  let articles = (await getAllArticles()).slice(0, 2)
 
   return (
     <>
@@ -298,6 +298,12 @@ export default async function Home() {
             {articles.map((article) => (
               <Article key={article.slug} article={article} />
             ))}
+            <div className="flex justify-center">
+              <Button href="/articles" variant="secondary" className="group">
+                Read more articles
+                <ArrowDownIcon className="h-4 w-4 rotate-90 stroke-slate-400 transition group-active:stroke-slate-600 dark:group-hover:stroke-slate-50 dark:group-active:stroke-slate-50" />
+              </Button>
+            </div>
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             <Newsletter />
