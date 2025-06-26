@@ -178,7 +178,7 @@ export default function Testimonials() {
               {/* Content - Flexible Height */}
               <div className="flex-1 mb-4">
                 <blockquote className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                  "{testimonial.content}"
+                  &ldquo;{testimonial.content}&rdquo;
                 </blockquote>
               </div>
 

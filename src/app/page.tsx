@@ -267,7 +267,7 @@ export default async function Home() {
             SOFTWARE DEVELOPER, FREELANCER, AND PART TIME BATMAN.
           </h1>
           <p className="mt-6 text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-            I'm Sarvagya, a CSE Student and Freelancer based in Bangalore,
+            I&apos;m Sarvagya, a CSE Student and Freelancer based in Bangalore,
             Karnataka. Dive deep into a universe where innovation, problem-solving, and cutting-edge tech collide. 
             Explore the digital creations that reshape the world, one project at a time.
           </p>
