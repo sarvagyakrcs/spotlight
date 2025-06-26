@@ -10,6 +10,14 @@ const nextConfig = {
       '/articles/*': ['./src/app/articles/**/*.mdx'],
     },
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'fiverr-res.cloudinary.com',
+      },
+    ],
+  },
 }
 
 const withMDX = nextMDX({
